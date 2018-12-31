@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{60705ED7-A5FC-49BE-87A9-918B11A1C33F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BaseFrame.Frame</RootNamespace>
+    <AssemblyName>BaseFrame.Frame</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CSkin, Version=16.1.14.2, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\CSkin.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Application\ApplicationCore.cs" />
+    <Compile Include="Dock\DockManager.cs" />
+    <Compile Include="Dock\DockPanelSingleton.cs" />
+    <Compile Include="Dock\DockWindowCollection.cs" />
+    <Compile Include="Dock\Window\ToolWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dock\Window\ToolWindow.Designer.cs">
+      <DependentUpon>ToolWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\Menu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Menu\MenuItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Menu\MenuItemContainer.cs" />
+    <Compile Include="Menu\MenuItemFactory.cs" />
+    <Compile Include="Menu\MenuManage.cs" />
+    <Compile Include="Application\ApplicationSetup.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PluginConfig.cs" />
+    <Compile Include="StatusBar\StatusBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="StatusBar\StatusBarSingleton.cs" />
+    <Compile Include="StatusBar\StatusProgressBar\StatusProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="StatusBar\StatusProgressBar\StatusProgressBarSetup.cs" />
+    <Compile Include="ToolBar\ToolBarButton\ToolBarButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ToolBar\ToolBarButton\ToolBarButtonSetup.cs" />
+    <Compile Include="ToolBar\ToolBarComboBox\ToolBarComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ToolBar\ToolBarSeparator\ToolBarSeparator.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ToolBar\ToolBarSeparator\ToolBarSeparatorSetup.cs" />
+    <Compile Include="ToolBar\ToolBarSingleton.cs" />
+    <Compile Include="ToolBar\ToolBarToolkit.cs" />
+    <Compile Include="ViewContent\Interface\IViewContent.cs" />
+    <Compile Include="WorkBench\WorkBench.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WorkBench\WorkBench.Designer.cs">
+      <DependentUpon>WorkBench.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WorkBench\WorkBenchSingleton.cs" />
+    <Compile Include="ToolBar\ToolBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BaseFrame.Dock\BaseFrame.Dock.csproj">
+      <Project>{c75532c4-765b-418e-b09b-46d36b2abdb1}</Project>
+      <Name>BaseFrame.Dock</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FrameCore\BaseFrame.Core.csproj">
+      <Project>{b5d55a19-e2ab-43a0-8946-b0dcc97d1615}</Project>
+      <Name>BaseFrame.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Dock\Window\ToolWindow.resx">
+      <DependentUpon>ToolWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorkBench\WorkBench.resx">
+      <DependentUpon>WorkBench.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

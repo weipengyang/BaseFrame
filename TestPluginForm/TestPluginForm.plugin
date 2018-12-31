@@ -1,0 +1,17 @@
+﻿<Plugin  name="FrameConfig"
+           author="oywp"
+           version="1.0.0"
+           description="测试"
+           initialized="true">
+
+  <Menu>
+    <MenuItem path="/BaseFrame/Menu/Debug/Pluign"
+              id="plugin"
+              label="插件111"
+              image="Resource\MainFrame\Test.png"
+              index="0"
+              assemblyName="TestPluginForm.dll"
+              className="TestPluginForm.ShowCommannd">
+    </MenuItem>
+   </Menu>
+</Plugin>

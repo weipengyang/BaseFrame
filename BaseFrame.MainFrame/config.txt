@@ -1,0 +1,6 @@
+
+菜单路径：/BaseFrame/Menu
+工具栏路径：/BaseFrame/ToolBar
+右键菜单路径： /BaseFrame/ContextMenu
+浮动窗口路径：/BaseFrame/DockBar 
+状态栏路径：/BaseFrame/StatusBar

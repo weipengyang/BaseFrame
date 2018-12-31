@@ -1,0 +1,114 @@
+﻿<Plugin  name="FrameConfig" author="oywp" version="1.0.0" description="" initialized="true">
+  <Menu>
+    <MenuTab path="/BaseFrame/Menu/File" id="File" label="File(F)"  index="0"></MenuTab>
+    <MenuTab path="/BaseFrame/Menu/View" id="View" label="View(V)" index="1"></MenuTab>
+    <MenuTab path="/BaseFrame/Menu/Debug" id="Debug"  label="Debug(D)" index="2"></MenuTab>
+    <MenuTab path="/BaseFrame/Menu/Tool" id="Tool"  label="Tool(T)" index="3"></MenuTab>
+    <MenuItem path="/BaseFrame/Menu/File/Create"
+              id="Create"
+              label="Create2"
+              image="Resource\MainFrame\Test.png"
+              index="0"
+              assemblyName="BaseFrame.MainFrame.dll"
+              className="BaseFrame.MainFrame.CreateCommand">
+    </MenuItem>
+    <!--下拉菜单-->
+    <MenuDropGroup path="/BaseFrame/Menu/File/Open" id="Open" label="Open1" image="" index="1">
+      <MenuItem path="/BaseFrame/Menu/File/Open/Project" id="Project" label="Project1" image="" index="0"></MenuItem>
+      <MenuItem path="/BaseFrame/Menu/File/Open/TreeLir" id="TreeLir" label="TreeLir1"  image="Resource\MainFrame\Test.png" index="1">
+      </MenuItem>
+    </MenuDropGroup>
+    <MenuItem path="/BaseFrame/Menu/View/Window/Windows"  id="Windows"  label="Windows1"  image="" index="0"></MenuItem>
+    <MenuDropGroup path="/BaseFrame/Menu/View/Window/Browser" id="Browser" label="Browser1"   image="" index="1">
+      <MenuItem path="/BaseFrame/Menu/View/Dock"
+                id="Dock"
+                label="Dock1"
+                image="Resource\MainFrame\Open.png"
+                index="1"
+                assemblyName="BaseFrame.MainFrame.dll"
+                className="BaseFrame.MainFrame.CreateCommand">
+      </MenuItem>
+    </MenuDropGroup>
+    <MenuItem path="/BaseFrame/Menu/Tool/Update" id="Update" label="Update"  image="" index="0"></MenuItem>
+  </Menu>
+
+  <DockBar>
+    <DockItem path="/BaseFrame/DockBar/Frame/Left"
+              id="Left"
+              label="Left"
+              dockType="DockLeft"
+              dockWindowClass="BaseFrame.MainFrame.WorkTreeWindow"
+              assemblyName="BaseFrame.MainFrame.dll">
+    </DockItem>
+    <DockItem path="/BaseFrame/DockBar/Frame/Right"
+              id="Right"
+              label="Right"
+              dockType="DockRightAutoHide"
+              dockWindowClass="BaseFrame.MainFrame.WorkPropertyWindow"
+              assemblyName="BaseFrame.MainFrame.dll">
+    </DockItem>
+    <DockItem path="/BaseFrame/DockBar/Frame/Middle"
+              id="Middle"
+              label="Middle"
+              dockType="Document"
+              dockWindowClass="BaseFrame.MainFrame.WorkMidWindow"
+              assemblyName="BaseFrame.MainFrame.dll">
+    </DockItem>
+    <DockItem path="/BaseFrame/DockBar/Frame/Middle"
+              id="Middle"
+              label="Middle"
+              dockType="Document"
+              dockWindowClass="BaseFrame.MainFrame.WorkMidWindow"
+              assemblyName="BaseFrame.MainFrame.dll">
+    </DockItem>
+    <DockItem path="/BaseFrame/DockBar/Frame/Buttom"
+              id="Buttom"
+              label="Buttom"
+              dockType="DockBottomAutoHide"
+              dockWindowClass="BaseFrame.MainFrame.OutputWindow"
+              assemblyName="BaseFrame.MainFrame.dll">
+    </DockItem>
+  <DockItem path="/BaseFrame/DockBar/Frame/Buttom"
+              id="Buttom"
+              label="Buttom"
+              dockType="DockBottomAutoHide"
+              dockWindowClass="BaseFrame.MainFrame.OutputWindow"
+              assemblyName="BaseFrame.MainFrame.dll">
+    </DockItem>
+  </DockBar>
+
+  <ToolBar>
+    <!--displayStyle="Image"||"Text"||"ImageAndText"-->
+    <ToolBarButton path="/BaseFrame/ToolBar/ToolBarButton/Open"
+              id="open"
+              displayStyle="ImageAndText"
+              image="Resource\MainFrame\Open.png"
+              label="Open"
+              index="0"
+              assemblyName="BaseFrame.MainFrame.dll"
+              className="BaseFrame.MainFrame.CreateCommand">
+    </ToolBarButton>
+    <ToolBarSeparator path="/BaseFrame/ToolBar/ToolBarSeparator/1" id="1"></ToolBarSeparator>
+    <ToolBarButton path="/BaseFrame/ToolBar/ToolBarButton/Open1"
+                id="open1"
+                displayStyle="Image"
+                image="Resource\MainFrame\Test.png"
+                label="Open1"
+                index="1"
+                assemblyName="BaseFrame.MainFrame.dll"
+                className="BaseFrame.MainFrame.CreateCommand">
+    </ToolBarButton>
+    <ToolBarSeparator path="/BaseFrame/ToolBar/ToolBarSeparator/2" id="2"></ToolBarSeparator>
+    <!--<ToolBarComboBox path="/BaseFrame/ToolBar/ToolBarComboBox/Meature" id="meature">
+      <ToolBarComboBoxItem path="/BaseFrame/ToolBar/ToolBarComboBox/Meature/Item1" id="Item1" label="长度测量"  assemblyName="BaseFrame.MainFrame.dll" className="BaseFrame.MainFrame.CreateCommand"></ToolBarComboBoxItem>
+      <ToolBarComboBoxItem path="/BaseFrame/ToolBar/ToolBarComboBox/Meature/Item2" id="Item2" label="面积测量"  assemblyName="BaseFrame.MainFrame.dll" className="BaseFrame.MainFrame.CreateCommand"></ToolBarComboBoxItem>
+      <ToolBarComboBoxItem path="/BaseFrame/ToolBar/ToolBarComboBox/Meature/Item3" id="Item3" label="高度测量"  assemblyName="BaseFrame.MainFrame.dll" className="BaseFrame.MainFrame.CreateCommand"></ToolBarComboBoxItem>
+    </ToolBarComboBox>-->
+  </ToolBar>
+
+  <StatusBar>
+    <!--<StatusProgressBar path="/BaseFrame/StatusBar/ProgressBar/1" id="1" value="50" length="250"></StatusProgressBar>
+    <StatusLabel path="" id="" label="111"></StatusLabel>-->
+  </StatusBar>
+
+</Plugin>

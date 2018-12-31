@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2FC9809F-7324-494D-A8F9-037BCCB6EF65}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BaseFrame</RootNamespace>
+    <AssemblyName>BaseFrame</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\BaseFrame.XML</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=3.5.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.3.5.2.0\lib\Autofac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Autofac.Configuration, Version=3.3.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.3.5.2.0\lib\Autofac.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Autofac.Extras.CommonServiceLocator, Version=3.2.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.3.5.2.0\lib\Autofac.Extras.CommonServiceLocator.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar2, Version=12.5.0.2, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevComponents.DotNetBar2.12.5.0.3\lib\DevComponents.DotNetBar2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8.1\lib\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Practices.ServiceLocation.1.3.0.0\lib\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SNBC.DotNetBaseLibrary.SocketUtils, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SNBC.DotNetBaseLibrary.SocketUtils.1.0.0.0\lib\SNBC.DotNetBaseLibrary.SocketUtils.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SNBC.FTDF.PublicUtils, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SNBC.FTDF.PublicUtils.1.1.1.0\lib\SNBC.FTDF.PublicUtils.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseMvpInfrastructure\Model\Constants.cs" />
+    <Compile Include="BaseMvpInfrastructure\IDependencyService.cs" />
+    <Compile Include="BaseMvpInfrastructure\View\BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseMvpInfrastructure\View\BaseMultiDocForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseMvpInfrastructure\View\BaseSingleDocForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseMvpInfrastructure\View\MultiDocSubForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrameInterface\PresenterInterface\IFileReaderPresenter.cs" />
+    <Compile Include="FrameInterface\ViewInterface\IFileReaderView.cs" />
+    <Compile Include="Presenter\FileReaderPresenter.cs" />
+    <Compile Include="Presenter\SingleDocFormPresenter.cs" />
+    <Compile Include="Service\FileService.cs" />
+    <Compile Include="View\CommonView\MessageBoxViews\AsynchronousWaitDialog.cs" />
+    <Compile Include="View\CommonView\MessageBoxViews\AsynchronousWaitDialogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\CommonView\MessageBoxViews\AsynchronousWaitDialogForm.Designer.cs">
+      <DependentUpon>AsynchronousWaitDialogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\CommonView\MessageBoxViews\ConstStringResources.cs" />
+    <Compile Include="View\CommonView\MessageBoxViews\CustomDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\CommonView\MessageBoxViews\CustomDialog.Designer.cs">
+      <DependentUpon>CustomDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\CommonView\MessageBoxViews\InputBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\CommonView\MessageBoxViews\InputBox.designer.cs">
+      <DependentUpon>InputBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\CommonView\MessageBoxViews\RightToLeftConverter.cs" />
+    <Compile Include="Examples\CallBackExample\CallBackExample.cs" />
+    <Compile Include="Examples\CallBackExample\ReturnMsg.cs" />
+    <Compile Include="Examples\CallBackExample\UseCallBack.cs" />
+    <Compile Include="Examples\MsgViewExamples\MsgBoxExampleView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Examples\MsgViewExamples\MsgBoxExampleView.Designer.cs">
+      <DependentUpon>MsgBoxExampleView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\MsgViewExamples\MsgBoxExampleViewToolBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Examples\MsgViewExamples\MsgBoxExampleViewToolBar.Designer.cs">
+      <DependentUpon>MsgBoxExampleViewToolBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\MsgViewExamples\ShowMessageViewExampleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Examples\MsgViewExamples\ShowMessageViewExampleForm.Designer.cs">
+      <DependentUpon>ShowMessageViewExampleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\MsgViewExamples\ThreadMsgBoxExampleView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Examples\MsgViewExamples\ThreadMsgBoxExampleView.Designer.cs">
+      <DependentUpon>ThreadMsgBoxExampleView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\MsgViewExamples\ThreadMsgExampleViewToolBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Examples\MsgViewExamples\ThreadMsgExampleViewToolBar.Designer.cs">
+      <DependentUpon>ThreadMsgExampleViewToolBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrameInterface\IDialogMessageService.cs" />
+    <Compile Include="FrameInterface\PresenterInterface\IMsgBoxExamplePresenter.cs" />
+    <Compile Include="FrameInterface\PresenterInterface\IThreadMsgBoxExamplePresenter.cs" />
+    <Compile Include="BaseMvpInfrastructure\View\IMainView.cs" />
+    <Compile Include="FrameInterface\ViewInterface\IMsgBoxExampleView.cs" />
+    <Compile Include="FrameInterface\ViewInterface\IThreadMsgBoxExampleView.cs" />
+    <Compile Include="BaseMvpInfrastructure\Model\ClosingEventArgs.cs" />
+    <Compile Include="FrameInterface\ViewInterface\IMultiDocForm.cs" />
+    <Compile Include="BaseMvpInfrastructure\Presenter\BasePresenter.cs" />
+    <Compile Include="FrameInterface\PresenterInterface\IMultiDocFormPresenter.cs" />
+    <Compile Include="FrameInterface\PresenterInterface\ISingleDocFormPresenter.cs" />
+    <Compile Include="Presenter\MsgBoxExamplePresenter.cs" />
+    <Compile Include="Presenter\MultiDocFormPresenter.cs" />
+    <Compile Include="BaseMvpInfrastructure\Presenter\IMultiDocPresenter.cs" />
+    <Compile Include="BaseMvpInfrastructure\Presenter\IPresenter.cs" />
+    <Compile Include="BaseMvpInfrastructure\Presenter\ISingleDocPresenter.cs" />
+    <Compile Include="Examples\FileServiceExamples\FileReaderView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Examples\FileServiceExamples\FileReaderView.Designer.cs">
+      <DependentUpon>FileReaderView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\MultiDocView\MultiDocForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\MultiDocView\MultiDocForm.Designer.cs">
+      <DependentUpon>MultiDocForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseMvpInfrastructure\View\IMultiDocView.cs" />
+    <Compile Include="FrameInterface\ViewInterface\IMultiDocSubForm.cs" />
+    <Compile Include="BaseMvpInfrastructure\View\IView.cs" />
+    <Compile Include="Presenter\ThreadMsgBoxExamplePresenter.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="BaseMvpInfrastructure\View\ISingleDocView.cs" />
+    <Compile Include="Service\WinFormsMessageService.cs" />
+    <Compile Include="FrameInterface\ViewInterface\ISingleDocForm.cs" />
+    <Compile Include="View\SingleDocView\SingleDocForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\SingleDocView\SingleDocForm.Designer.cs">
+      <DependentUpon>SingleDocForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\CommonView\MessageBoxViews\CustomDialog.resx">
+      <DependentUpon>CustomDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Examples\MsgViewExamples\MsgBoxExampleView.resx">
+      <DependentUpon>MsgBoxExampleView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Examples\MsgViewExamples\MsgBoxExampleViewToolBar.resx">
+      <DependentUpon>MsgBoxExampleViewToolBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Examples\MsgViewExamples\ShowMessageViewExampleForm.resx">
+      <DependentUpon>ShowMessageViewExampleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Examples\MsgViewExamples\ThreadMsgBoxExampleView.resx">
+      <DependentUpon>ThreadMsgBoxExampleView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Examples\MsgViewExamples\ThreadMsgExampleViewToolBar.resx">
+      <DependentUpon>ThreadMsgExampleViewToolBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Examples\FileServiceExamples\FileReaderView.resx">
+      <DependentUpon>FileReaderView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MultiDocView\MultiDocForm.resx">
+      <DependentUpon>MultiDocForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\SingleDocView\SingleDocForm.resx">
+      <DependentUpon>SingleDocForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Configuration\autofac.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Model\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="readme项目结构和规范说明.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Utility\BaseFrame.Utility.csproj">
+      <Project>{67780d81-30f7-479f-867c-1a526d235789}</Project>
+      <Name>BaseFrame.Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
